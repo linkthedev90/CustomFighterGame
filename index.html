@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Monster Battle</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <!-- Portrait for Left Fighter -->
+  <div class="playerOne" id="playerOne">
+    <img id="playerOneImage"src="https://myspace.com/common/images/user.png" alt="#">
+  </div>
+
+  <!-- Space for Button to start fight -->
+  <div class="center" >
+    <button id="button">Start The Game</button>
+  </div>
+
+  <!-- Portrait for Right Fighter -->
+  <div class="playerTwo" id="playerTwo">
+    <img id="playerTwoImage"src="https://myspace.com/common/images/user.png" alt="#">
+  </div>
+
+  <!-- Space for Damage / Attach Text -->
+  <div class="attackLogs" >
+    <p id="logs"></p>
+  </div>
+
+</body>
+<script type="module" src="script.js"></script>
+<script type="module" src="fighter.js"></script>
+<script type="module" src="warrior.js"></script>
+</html>

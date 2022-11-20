@@ -1,0 +1,70 @@
+body {
+    background-image: URL(https://www.emugifs.net/wp-content/uploads/2019/04/The-King-of-Fighters-96-Fighting-Game-KOF-96-Neo-Geo-SNK-Background-Stage-Sprites-Morning-Osaka.gif);
+    /* background-position: center; */
+    background-color: rgb(122, 122, 122);
+    background-position-y: 180px;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size:cover
+}
+
+.playerOne {
+    position: absolute;
+    background-color: black;
+    left: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+    width: 20%;
+    /* border: 5px solid #FFFF00; */
+    padding: 10px;
+    /* background-color: rgb(28, 22, 36); */
+    opacity: 100%;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 5px solid #FFFF00; */
+    padding: 10px;
+    /* background-color: rgb(28, 22, 36); */
+    opacity: 100%;
+}
+
+.playerTwo {
+    position: absolute;
+    background-color: black;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+    width: 20%;
+    /* border: 5px solid #FFFF00; */
+    padding: 10px;
+    /* background-color: rgb(28, 22, 36); */
+    opacity: 100%;
+}
+
+img {
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
+
+.attackLogs {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    width: 40%;
+    height: 10%;
+    border: 5px;
+    font-size: 24px;
+    text-align: center;
+    border-color: aqua;
+    outline: 2px solid rgb(0, 0, 0);
+    transform: translate(-50%, -50%);
+    /* border: 5px solid #FFFF00; */
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+}
