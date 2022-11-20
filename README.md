@@ -22,3 +22,19 @@ You can make your "fighter" anything you want! Just change the following attribu
 3. Using a Live Server extension, open index.html locally.
 4. Hit the button "Start The Game" to run the current loaded fighters
 
+## Creating your own fighter
+There is a file labeled "monsterTemplate.js" that you can use to quickly get a fighter into the game
+1. Duplicate the "monsterTemplate.js" file
+2. On line 8, Update the class from Monster to Whatever you want ( I use the fighters name )
+3. On line 11, Update the name variable to your fighter's name
+4. On line 14, Replace the "#" with a link to the picture you want to use for your fighter ( Can be a direct link from the web, or gif )
+Optional Sfx
+1. On line 23, Replace the "#" with a link to a attack sfx. This has a 30% chance of playing when your fighter attacks
+2. On Line 43, Replace the "#" with a link to a victory sfx. This will play if your fighter wins
+
+## Last Step
+Once you have your unique class updated, import it into the script.js file with a similar import statement seen on line 3 or 4 in "script.js"
+
+Then, update the player1 or player2 object, on line 70 / 75 in script.js,  to be your unqiue class.
+
+Enjoy!
