@@ -16,6 +16,10 @@ var playerTwoImage = document.getElementById("playerTwoImage");
 var playerTwoLog = document.getElementById("logs");
 var playerTwo = document.getElementById("playerTwo");
 
+
+var playerOneHealthBar = document.getElementsByClassName("lifeBarGreen");
+
+
 // click events
 button.addEventListener("click", startGame, false);
 
@@ -79,6 +83,8 @@ let player2 = new Cloud();
 
 // Main Game Loop
 async function startGame() {
+
+    playerOneHealthBar.style.width = "10px";
 
     // Image variables to load character images
     playerOneImage.src = player1.img;
