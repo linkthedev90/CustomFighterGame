@@ -21,6 +21,45 @@ body {
     opacity: 100%;
 }
 
+
+.lifeBarRed {
+    /* position: absolute; */
+    background-color: rgb(245, 7, 7);
+    /* left: 15%; */
+    /* top: 50%; */
+    transform: translate(50px, 189px);
+    height: 25px;
+    width: 290px;
+    /* border: 5px solid #FFFF00; */
+    /* padding: 10px; */
+    /* background-color: rgb(28, 22, 36); */
+    opacity: 100%;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.lifeBarGreen {
+    /* position: absolute; */
+    background-color: rgb(3, 205, 0);
+    /* left: 15%; */
+    /* top: 50%; */
+    transform: translate(0px, -19px);
+    height: 25px;
+    width: 290px;
+    /* border: 5px solid #FFFF00; */
+    /* padding: 10px; */
+    /* background-color: rgb(28, 22, 36); */
+    opacity: 100%;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    display: table-caption;
+}
+
+
+
+
 .center {
     position: absolute;
     left: 50%;
