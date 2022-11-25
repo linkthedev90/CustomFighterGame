@@ -17,7 +17,7 @@ var playerTwoLog = document.getElementById("logs");
 var playerTwo = document.getElementById("playerTwo");
 
 
-var playerOneHealthBar = document.getElementsByClassName("lifeBarGreen");
+var playerOneHealthBar = document.getElementById("pOneHp");
 
 
 // click events
@@ -78,13 +78,20 @@ let player1 = new Vegeta();
 //let player2 = new NastyLady();
 let player2 = new Cloud();
 
+function updateLifeBarP1(p1LifeBar, p2AttackPower) {
+    var currentWidth = Number(p1LifeBar.style.width.slice(0, -2));
+    var amountToDeduct = Number(p2AttackPower * 3.5);
 
+    var newLifeBar = amountToDeduct - currentWidth;
+    p1LifeBar.style.width = `${String(newLifeBar)}px`;
+    console.log(newLifeBar);
+}
 
 
 // Main Game Loop
 async function startGame() {
 
-    playerOneHealthBar.style.width = "10px";
+    //playerOneHealthBar.style.width = "10px";
 
     // Image variables to load character images
     playerOneImage.src = player1.img;
@@ -106,6 +113,7 @@ async function startGame() {
         
         // Player Two takes damage from Player One
         playerTwoLog.innerText = player2.damage(player1.currentPower);
+        
         await sleep(1000);
 
 
@@ -121,6 +129,7 @@ async function startGame() {
         await sleep(2000);
         playerOneHit();
         playerOneLog.innerText = player1.damage(player2.currentPower);
+        updateLifeBarP1(playerOneHealthBar, player2.currentPower);
 
         await sleep(2000);
 
