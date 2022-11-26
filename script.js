@@ -19,6 +19,12 @@ var playerTwo = document.getElementById("playerTwo");
 
 var playerOneHealthBar = document.getElementById("pOneHp");
 
+var playerOneHealthBarText = document.getElementById("lifeBarTextP1");
+
+var playerTwoHealthBar = document.getElementById("pTwoHp");
+
+var playerTwoHealthBarText = document.getElementById("lifeBarTextP2");
+
 
 // click events
 button.addEventListener("click", startGame, false);
@@ -72,19 +78,64 @@ function playerTwoKO() {
 // Object from subclass Warrior
 //let player1 = new Warrior("Goku", 100, "https://i.ebayimg.com/images/g/J8YAAOSwVY1ZpOt0/s-l500.jpg");
 let player1 = new Vegeta();
-
+var p1LifeBarConversion = 400;
 
 // Object from subclass Warrior
 //let player2 = new NastyLady();
 let player2 = new Cloud();
+var p2LifeBarConversion = 400;
+
 
 function updateLifeBarP1(p1LifeBar, p2AttackPower) {
-    var currentWidth = Number(p1LifeBar.style.width.slice(0, -2));
-    var amountToDeduct = Number(p2AttackPower * 3.5);
+    
+    var amountToDeduct = Number(p2AttackPower * 4);
+    var newLifeBar = p1LifeBarConversion - amountToDeduct;
 
-    var newLifeBar = amountToDeduct - currentWidth;
-    p1LifeBar.style.width = `${String(newLifeBar)}px`;
-    console.log(newLifeBar);
+    if (newLifeBar < 0) {
+
+        newLifeBar = 0
+
+        p1LifeBarConversion = newLifeBar;
+
+        p1LifeBar.style.width = `${String(newLifeBar)}px`;
+    
+        playerOneHealthBarText.innerHTML = String(0) + "/100";
+
+    } else {
+        p1LifeBarConversion = newLifeBar;
+
+        p1LifeBar.style.width = `${String(newLifeBar)}px`;
+    
+        playerOneHealthBarText.innerHTML = String(player1.hp) + "/100";
+    }
+    
+}
+
+
+
+function updateLifeBarP2(p2LifeBar, p1AttackPower) {
+    
+    var amountToDeduct = Number(p1AttackPower * 4);
+    var newLifeBar = p2LifeBarConversion - amountToDeduct;
+
+    if (newLifeBar < 0) {
+
+        newLifeBar = 0
+
+        p2LifeBarConversion = newLifeBar;
+
+        p2LifeBar.style.width = `${String(newLifeBar)}px`;
+    
+        playerTwoHealthBarText.innerHTML = String(0) + "/100";
+
+    } else {
+        p2LifeBarConversion = newLifeBar;
+
+        p2LifeBar.style.width = `${String(newLifeBar)}px`;
+    
+        playerTwoHealthBarText.innerHTML = String(player2.hp) + "/100";
+    }
+    
 }
 
 
@@ -103,7 +154,7 @@ async function startGame() {
     // While loop to run the game until one player is dead
     while (gameRunning) {
 
-
+        
         // Player One Attack Prompt
         playerOneLog.innerText = player1.attack();
 
@@ -113,7 +164,7 @@ async function startGame() {
         
         // Player Two takes damage from Player One
         playerTwoLog.innerText = player2.damage(player1.currentPower);
-        
+        updateLifeBarP2(playerTwoHealthBar, player1.currentPower);
         await sleep(1000);
 
 
